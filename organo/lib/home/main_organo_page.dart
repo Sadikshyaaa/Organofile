@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:organo/home/Organo_page_body.dart';
+import 'package:organo/utlis/color.dart';
 
 
 import 'package:organo/widgets/big_text.dart';
 import 'package:organo/widgets/small_text.dart';
-import '../color.dart';
+
 
 class MainOrganoPage extends StatefulWidget {
   const MainOrganoPage({super.key});
@@ -29,7 +30,7 @@ class _MainOrganoPageState extends State<MainOrganoPage> {
               children: [
                 Column(
                   children: [
-                    BigText(text: "Nepal", color: AppColors.maincolor),
+                    BigText(text: "Organo", color: AppColors.maincolor),
                     Row(
                       children: [
                         SmallText(text: "Pokhara", color: Colors.black54),
@@ -53,7 +54,9 @@ class _MainOrganoPageState extends State<MainOrganoPage> {
             ),
           ),
         ),
-        OrganoPageBody(), 
+        Expanded(child: SingleChildScrollView(
+          child: OrganoPageBody(),
+        )), 
       ],
     )
     );

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:organo/utlis/dimension.dart';
 
 // ignore: must_be_immutable
 class BigText extends StatelessWidget {
@@ -22,7 +23,7 @@ class BigText extends StatelessWidget {
       style: TextStyle(
         fontFamily: "Trajan Pro",
         color: color,
-        fontSize: size,
+        fontSize: size ==0?Dimensions.font20:size,
         fontWeight: FontWeight.w700
 
       ),

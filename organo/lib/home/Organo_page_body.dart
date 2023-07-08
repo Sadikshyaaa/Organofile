@@ -1,6 +1,6 @@
 import 'package:dots_indicator/dots_indicator.dart';
 import 'package:flutter/material.dart';
-import 'package:organo/color.dart';
+import 'package:organo/utlis/color.dart';
 import 'package:organo/widgets/big_text.dart';
 import 'package:organo/widgets/icon_and_text_widget.dart';
 import 'package:organo/widgets/small_text.dart';
@@ -58,11 +58,108 @@ class  OrganoPageBodyState extends State<OrganoPageBody> {
           dotsCount: 5,
           position: _currPageValue,
           decorator: DotsDecorator(
+            activeColor: AppColors.maincolor,
             size: const Size.square(9.0),
             activeSize: const Size(18.0, 9.0),
             activeShape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(5.0)),
   ),
 ),
+SizedBox(height: 30,),
+Container(
+  margin: EdgeInsets.only(left:30),
+  child: Row(
+    crossAxisAlignment: CrossAxisAlignment.end,
+    children: [
+      BigText(text: "Popular"),
+      SizedBox(width:10),
+      Container(
+        margin: const EdgeInsetsDirectional.only(bottom:3),
+        child: BigText(text: ".", color:Colors.black26),
+        
+      ),
+      SizedBox(width:10),
+      Container(
+        margin: const EdgeInsetsDirectional.only(bottom:2),
+        child: SmallText(text: "Product pairing"),
+      )
+    ],
+  ),
+),
+//list of product and images
+Container(
+  height: 700,
+  child: ListView.builder(
+    physics: NeverScrollableScrollPhysics(),
+  shrinkWrap: true,
+
+  itemCount: 7,
+  itemBuilder :(context,index){
+    return Container(
+      margin: EdgeInsets.only(left:20, right: 20, bottom:10),
+      child:Row(
+        children: [
+          //image section
+          Container(
+            width: 120,
+            height: 120,
+            decoration:BoxDecoration(
+              borderRadius: BorderRadius.circular(20),
+              color:Colors.white38,
+              image: DecorationImage(
+                fit: BoxFit.cover,
+                image:AssetImage(
+                  "assets/images/Honey.jpg"
+                )
+              )
+            )
+          ),
+          //text section
+          Expanded(
+            child: Container(
+            height:100,
+            
+            decoration: BoxDecoration(
+              borderRadius: BorderRadius.only(
+                topRight: Radius.circular(20),
+                bottomRight: Radius.circular(20)
+              ),
+              color:Colors.white,
+            ),
+            child: Padding(
+              padding: EdgeInsets.only(left: 10, right:10),
+            child: Column(
+              children: [
+                BigText(text: "Organic Honey"),
+                SizedBox(height: 5),
+                SmallText(text: "Makes your health good"),
+                SizedBox(height: 5),
+
+                Row(
+                    children: [
+                      
+
+                      IconAndTextWidget(icon: Icons.circle_sharp, 
+                      text: "100% Organic",
+                      iconColor: AppColors.maincolor),
+
+                      IconAndTextWidget(icon: Icons.circle_sharp, 
+                      text: "EcoFriendly",
+                      iconColor: AppColors.iconcolor2)
+                    ],
+                  )
+
+              ],
+              ),
+            ),
+          ),
+          )
+        ],
+        ),
+     );
+  }
+  )
+  )
+
       ],  
     );
   }
@@ -97,7 +194,7 @@ class  OrganoPageBodyState extends State<OrganoPageBody> {
       child: Stack(
       children: [
         Container(
-            height: 200,
+            height: 220,
             margin: EdgeInsets.only(left:10, right: 10),
             decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(30),
@@ -113,7 +210,7 @@ class  OrganoPageBodyState extends State<OrganoPageBody> {
         Align(
           alignment: Alignment.bottomCenter,
           child: Container(
-            height:120,
+            height:100,
             margin: EdgeInsets.only(left:30, right:30, bottom: 15),
             decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(20),
@@ -141,7 +238,7 @@ class  OrganoPageBodyState extends State<OrganoPageBody> {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   BigText(text: "Bamboo Brush"),
-                  SizedBox(height: 10),
+                  SizedBox(height: 5),
                   Row(
                     children: [
                       Wrap(
@@ -155,7 +252,7 @@ class  OrganoPageBodyState extends State<OrganoPageBody> {
                       SmallText(text: "comments")
                     ],
                   ),
-                  SizedBox(height: 20),
+                  SizedBox(height: 5),
                   Row(
                     children: [
                       IconAndTextWidget(icon: Icons.circle_sharp, 
