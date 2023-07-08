@@ -19,8 +19,8 @@ class _MainOrganoPageState extends State<MainOrganoPage> {
   
     return Scaffold(
         body: Column(
-      children: [
-        Container(
+         children: [
+         Container(
           child: Container(
             margin: EdgeInsets.only(top: 45, bottom: 15),
             padding: EdgeInsets.only(left: 20, right: 20),

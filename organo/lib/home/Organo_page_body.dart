@@ -1,8 +1,10 @@
+import 'package:dots_indicator/dots_indicator.dart';
 import 'package:flutter/material.dart';
 import 'package:organo/color.dart';
 import 'package:organo/widgets/big_text.dart';
 import 'package:organo/widgets/icon_and_text_widget.dart';
 import 'package:organo/widgets/small_text.dart';
+
 
 
 class OrganoPageBody extends StatefulWidget {
@@ -39,7 +41,9 @@ class  OrganoPageBodyState extends State<OrganoPageBody> {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
+    return Column(
+      children: [
+        Container(
       //color: const Color.fromRGBO(255, 82, 82, 1),
       height: 300,
       child: PageView.builder(
@@ -47,7 +51,19 @@ class  OrganoPageBodyState extends State<OrganoPageBody> {
         itemCount: 5,
         itemBuilder: (context, position){
        return _buildPageItem(position);
-        }),
+        }
+        ),
+        ),
+        new DotsIndicator(
+          dotsCount: 5,
+          position: _currPageValue,
+          decorator: DotsDecorator(
+            size: const Size.square(9.0),
+            activeSize: const Size(18.0, 9.0),
+            activeShape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(5.0)),
+  ),
+),
+      ],  
     );
   }
   Widget _buildPageItem(int index){
