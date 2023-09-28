@@ -1,20 +1,18 @@
-import React from 'react'
+import React from "react";
 
-const hello = () => {
+const AnnualReport = () => {
   return (
-    <div>
-    hahahahahahahahahahahahahha
-      k cha sathi haru 
-      <div className="navbar">
-        <div className="header">
-          <div className="haha">
-            <div className="hehe"></div>
-          </div>
-        </div>
-      </div>
+    <div
+      style={{
+        display: "flex",
+        justifyContent: "Right",
+        alignItems: "Right",
+        height: "100vh",
+      }}
+    >
+      <h1>Annual Report</h1>
     </div>
-  )
-}
+  );
+};
 
-export default hello
-
+export default AnnualReport;
