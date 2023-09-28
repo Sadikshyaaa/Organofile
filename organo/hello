@@ -1,0 +1,30 @@
+git clone => github bata folder afno ma launa lai use garne yo 
+git status => code ko status herna lai kam lagcha 
+git add => naya or change gareko file add garne 
+git add . => sab file ekaichoti add garna lai
+git commit=> commit garne code record garne code 
+git push=> upload garne github ma 
+git init => git initialize garna lai
+
+Work flow => github ma repo banaune paila ani git clone garne ani changes garne file ma ani git add . garne 
+git commit -m "msg" garne ani git push -u origin main gardine push huncha 
+
+git branches
+git branch => to check branch
+git branch -M main (to rename branch)
+git checkout -b "branchname"  (naya branch banauna lai)
+git branch -d "branchname" (delete garna branch lai )
+
+merging code
+
+git diff "branchname" (compare garne differences )
+git merge "branchname" (merge garna duita branch haru)
+git pull origin main (code launa afno ma )
+git push origin "branch name" garne branch ko push hanna lai
+git merge (branch merge garne) natra pull request garne 
+
+//undoing changes
+git log garera sab commit herna milcha 
+jun add va tara commit vachaina tesko lai use garne =git reset filename or git reset (dherai file lai yo)
+add garera commit ni garyo vane tesko lai yo use garne= git reset HEAD~1 or (dherai commit lai reset garna lai) 
+git reset <commit hash> hash chai git log garera leraune  git reset --hard <hash>
